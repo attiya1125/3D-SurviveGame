@@ -43,14 +43,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_rb.velocity.y < 0)
-        {
-            _rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        }
-        else if (_rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
-        {
-            _rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-        }
+        //if (_rb.velocity.y < 0)
+        //{
+        //    _rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        // }
+        // else if (_rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
+        // {
+        //    _rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        //}
     }
 
     // Update is called once per frame
@@ -103,14 +103,14 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started && isGrounded())
         {
             _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
-            canDoubleJump = true;
+            //canDoubleJump = true;
         }
 
-        if (canDoubleJump)
-        {
-            _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
-            canDoubleJump = false;
-        }
+        //if (canDoubleJump)
+        //{
+        //   _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+        //    canDoubleJump = false;
+        //}
     }
 
     bool isGrounded()
