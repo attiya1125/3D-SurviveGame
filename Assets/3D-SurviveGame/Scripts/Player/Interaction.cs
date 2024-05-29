@@ -38,15 +38,14 @@ public class Interaction : MonoBehaviour
                     // 프롬포트 출력
                     SetPromptText();
                 }
-                else // ray에 오브젝트가 없을때
-                {
-                    curInteractGameObject = null;
-                    curInteractable = null;
-                    prompText.gameObject.SetActive(false);
-                }
+            }
+            else // ray에 오브젝트가 없을때
+            {
+                curInteractGameObject = null;
+                curInteractable = null;
+                prompText.gameObject.SetActive(false);
             }
         }
-        
     }
     private void SetPromptText()
     {
@@ -56,12 +55,13 @@ public class Interaction : MonoBehaviour
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started && curInteractable != null)
+        if(context.phase == InputActionPhase.Started && curInteractable != null) // 에임의 정보가 null이 아닐때
         {
             curInteractable.OnInteract();
             curInteractGameObject = null;
             curInteractable = null;
             prompText.gameObject.SetActive(false);
         }
+
     }
 }

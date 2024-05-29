@@ -5,12 +5,14 @@ using UnityEngine;
 public enum ItemType // 채집 가능한 아이템의 종류
 {
     Equipable,
-    Resource
+    Resource,
+    Consumable
 }
 
 public enum ConsumableType // 먹을 수 있는 아이템 타입
 {
-    Health
+    Health,
+    Hunger
 }
 
 [SerializeField]
@@ -36,5 +38,8 @@ public class ItemData : ScriptableObject
     public int maxStack;
 
     [Header("Consumable")]
-    public ItemDataConsumable consumables;
+    public ItemDataConsumable[] consumables;
+
+    [Header("Equip")]
+    public GameObject equipPrefabs;
 }

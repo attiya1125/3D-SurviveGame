@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -18,10 +19,19 @@ public class PlayerController : MonoBehaviour
     private float camCurXRot;
     public float lookSensitivity; // 민감도
     private Vector2 mouseDelta;
+    public bool canLook = true;
+
+    public Action inventory;
     private Rigidbody _rb;
 
     [Header("Jump")]
     public float jumpPower;
+    public float fallMultiplier; // 떨어질 때 중력 가중치
+    public float lowJumpMultiplier; // 짧게 점프할 때 중력 가중치
+    private bool canDoubleJump;
+
+
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -31,6 +41,18 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Update()
+    {
+        if (_rb.velocity.y < 0)
+        {
+            _rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (_rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
+        {
+            _rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -38,7 +60,10 @@ public class PlayerController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        CameraLook();
+        if (canLook)
+        {
+            CameraLook();
+        }
     }
     void Move()
     {
@@ -75,9 +100,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started && isGrounded())
+        if (context.phase == InputActionPhase.Started && isGrounded())
         {
             _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            canDoubleJump = true;
+        }
+
+        if (canDoubleJump)
+        {
+            _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            canDoubleJump = false;
         }
     }
 
@@ -99,5 +131,22 @@ public class PlayerController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+        _rb.isKinematic = !_rb.isKinematic;
+    }
+
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 }

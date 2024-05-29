@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interaction",
+                    "name": "Equip",
                     "type": "Button",
                     "id": "f1cd215e-cc0c-493d-92fb-f6c06c0563af",
                     "expectedControlType": "Button",
@@ -54,6 +54,15 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "7d75ed2b-a0f3-49d3-88e0-e0c4c4cbfd3a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "dcd1066b-eea1-45e2-9072-c4d18044fada",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -156,7 +165,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interaction",
+                    "action": "Equip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -168,6 +177,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf3848bd-6723-48e9-835c-1d21a4f16a4f",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
