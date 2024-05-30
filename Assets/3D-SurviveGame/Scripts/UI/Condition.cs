@@ -26,11 +26,11 @@ public class Condition : MonoBehaviour
     }
     public void Add(float value) // 회복
     {
-        curValue += Mathf.Min(curValue + value, maxValue); // maxvalue가 더 작으면 maxvalue값이 들어감
+        curValue = Mathf.Min(curValue + value, maxValue); // maxvalue가 더 작으면 maxvalue값이 들어감
     }
 
     public void Subtract(float value) // 데미지
     {
-        curValue -= Mathf.Max(curValue - value, 0); 
+        curValue = Mathf.Max(curValue - value, 0);
     }
 }
