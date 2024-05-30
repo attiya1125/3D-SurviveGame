@@ -42,10 +42,11 @@ public class PlayerCondition : MonoBehaviour , IDamagebe
 
         while (elapsedTime < duration)
         {
+            Debug.Log(damage);
             health.Subtract(damage);
             onTakeDamage?.Invoke();
             elapsedTime += interval;
-            yield return new WaitForSeconds(duration);
+            yield return new WaitForSeconds(interval);
         }
     }
 }

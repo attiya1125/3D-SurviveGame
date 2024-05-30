@@ -203,7 +203,7 @@ public class UIInventory : MonoBehaviour
                     case ConsumableType.Hunger:
                         break;
                     case ConsumableType.Poison:
-                        StartCoroutine(condition.TakeContinuousDamage(10f, 5f, 1f));
+                        StartCoroutine(condition.TakeContinuousDamage(selectedItem.consumables[i].value, 5f, 1f));
                         break;
                 }
             }
