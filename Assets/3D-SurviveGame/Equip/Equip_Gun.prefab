@@ -373,6 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8024909870203497044}
+  - component: {fileID: 4567763497722808044}
   m_Layer: 8
   m_Name: Equip_Gun
   m_TagString: Untagged
@@ -396,6 +397,18 @@ Transform:
   - {fileID: 4121128000407322284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 13.73, z: 0}
+--- !u!114 &4567763497722808044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137722874009663358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a050f3277b4644b9dc4ac97e524a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7027363440982878168
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRate: 0
-  attackDistance: 100
+  attackDistance: 500
   doesGatherResources: 1
   doesDealDamage: 1
   damage: 1

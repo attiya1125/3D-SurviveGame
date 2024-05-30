@@ -13,7 +13,9 @@ public enum ItemType // 채집 가능한 아이템의 종류
 public enum ConsumableType // 먹을 수 있는 아이템 타입
 {
     Health,
-    Hunger
+    Hunger,
+    Attack,
+    Poison
 }
 
 [Serializable] // 클래스를 직렬화 되게 보여주는것?

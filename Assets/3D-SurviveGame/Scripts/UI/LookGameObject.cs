@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookGameObject : MonoBehaviour
@@ -10,5 +8,11 @@ public class LookGameObject : MonoBehaviour
     void Update()
     {
         transform.rotation = cam.transform.rotation;
+
+        if (CharacterManager.Instance.Player.equipment.curEquip != null && gameObject.CompareTag("ClearTxt"))
+        {
+            Debug.Log("??");
+            Destroy(this.gameObject);
+        }
     }
 }
