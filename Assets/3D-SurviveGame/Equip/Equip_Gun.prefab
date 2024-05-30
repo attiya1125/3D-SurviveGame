@@ -373,7 +373,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8024909870203497044}
-  - component: {fileID: 3371638682250910436}
   m_Layer: 8
   m_Name: Equip_Gun
   m_TagString: Untagged
@@ -397,23 +396,6 @@ Transform:
   - {fileID: 4121128000407322284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 13.73, z: 0}
---- !u!114 &3371638682250910436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6137722874009663358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747209dc5369ad0469176e8d9b835e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRate: 0
-  attackDistance: 0
-  doesGatherResources: 0
-  doesDealDamage: 0
-  damage: 0
 --- !u!1 &7027363440982878168
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +447,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -643,6 +625,7 @@ GameObject:
   - component: {fileID: 5931012100762928030}
   - component: {fileID: 4671171427172643259}
   - component: {fileID: 3057994784619413678}
+  - component: {fileID: 6277803836135436286}
   m_Layer: 8
   m_Name: M1911 Handgun_Model
   m_TagString: Untagged
@@ -761,6 +744,23 @@ MonoBehaviour:
   destroyTimer: 2
   shotPower: 700
   ejectPower: 250
+--- !u!114 &6277803836135436286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568845867027830758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747209dc5369ad0469176e8d9b835e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRate: 0
+  attackDistance: 20
+  doesGatherResources: 1
+  doesDealDamage: 1
+  damage: 1
 --- !u!1 &8626006536976756042
 GameObject:
   m_ObjectHideFlags: 0

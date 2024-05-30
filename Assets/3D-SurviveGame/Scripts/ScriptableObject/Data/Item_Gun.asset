@@ -17,6 +17,7 @@ MonoBehaviour:
   type: 0
   icon: {fileID: 21300000, guid: d5af0429472263446a537b5170717651, type: 3}
   dropPrfab: {fileID: 5554405750215791644, guid: 2505c8ad72645f4489fc18788498c14a, type: 3}
+  interaction: "[F\uB97C \uD1B5\uD574 \uD68D\uB4DD]"
   canStack: 0
   maxStack: 0
   equipPrefabs: {fileID: 6137722874009663358, guid: 889c495516358a6409bc07223761a9fd, type: 3}

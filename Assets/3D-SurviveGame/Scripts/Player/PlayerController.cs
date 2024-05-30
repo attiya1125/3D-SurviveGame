@@ -41,19 +41,6 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Update()
-    {
-        //if (_rb.velocity.y < 0)
-        //{
-        //    _rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        // }
-        // else if (_rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
-        // {
-        //    _rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-        //}
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         Move();
@@ -100,17 +87,25 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && isGrounded())
+        if (context.phase == InputActionPhase.Started)
         {
-            _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
-            //canDoubleJump = true;
+            if (isGrounded())
+            {
+                Jump();
+                canDoubleJump = true;
+            }
+            else if (canDoubleJump)
+            {
+                Jump();
+                canDoubleJump = false;
+            }
         }
+    }
 
-        //if (canDoubleJump)
-        //{
-        //   _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
-        //    canDoubleJump = false;
-        //}
+    void Jump()
+    {
+        _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+        _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
     }
 
     bool isGrounded()

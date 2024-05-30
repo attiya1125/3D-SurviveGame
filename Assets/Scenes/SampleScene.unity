@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328059750872363492, guid: 65e585309e8255e488d687586699bd5e, type: 3}
       propertyPath: m_Name
-      value: Item_Wood (2)
+      value: Item_Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2339,7 +2339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328059750872363492, guid: 65e585309e8255e488d687586699bd5e, type: 3}
       propertyPath: m_Name
-      value: Item_Wood (1)
+      value: Item_Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3829,7 +3829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328059750872363492, guid: 65e585309e8255e488d687586699bd5e, type: 3}
       propertyPath: m_Name
-      value: Item_Wood (3)
+      value: Item_Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5469,7 +5469,19 @@ MonoBehaviour:
     m_ActionId: f1cd215e-cc0c-493d-92fb-f6c06c0563af
     m_ActionName: Player/Interaction[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866666021353673720}
+        m_TargetAssemblyTypeName: Equipment, Assembly-CSharp
+        m_MethodName: OnAttackInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7d75ed2b-a0f3-49d3-88e0-e0c4c4cbfd3a
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -5503,7 +5515,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2118827923}
   - component: {fileID: 2118827921}
-  - component: {fileID: 2118827922}
   m_Layer: 6
   m_Name: ProfileCamera
   m_TagString: Untagged
@@ -5562,14 +5573,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2118827922
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118827920}
-  m_Enabled: 1
 --- !u!4 &2118827923
 Transform:
   m_ObjectHideFlags: 0
