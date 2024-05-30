@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: "\uCD1D"
   description: "\uC801\uC744 \uC4F0\uB7EC\uB728\uB9B4 \uC218 \uC788\uC2B5\uB2C8\uB2E4"
   type: 0
-  icon: {fileID: 21300000, guid: d5af0429472263446a537b5170717651, type: 3}
+  icon: {fileID: 21300000, guid: 5fecc8707604b614d837c87da39981b7, type: 3}
   dropPrfab: {fileID: 5554405750215791644, guid: 2505c8ad72645f4489fc18788498c14a, type: 3}
   interaction: "[F\uB97C \uD1B5\uD574 \uD68D\uB4DD]"
   canStack: 0

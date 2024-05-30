@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eda59c46941b4b4681369a948cb93a3, type: 3}
   m_Name: Item_Mushroom
   m_EditorClassIdentifier: 
-  displayName: 
-  description: 
-  type: 0
-  icon: {fileID: 0}
-  dropPrfab: {fileID: 0}
-  interaction: 
-  canStack: 0
-  maxStack: 0
+  displayName: "\uB3C5\uBC84\uC12F"
+  description: "\uBA39\uC73C\uBA74 \uC544\uD50C\uC9C0\uB3C4,,?"
+  type: 2
+  icon: {fileID: 21300000, guid: 576df0a98e6438440810e9017534fcdf, type: 3}
+  dropPrfab: {fileID: 5975481207447299387, guid: 399f7127a6590f04486374e8632e6293, type: 3}
+  interaction: "[F\uB97C \uD1B5\uD574 \uD68D\uB4DD]"
+  canStack: 1
+  maxStack: 12
   equipPrefabs: {fileID: 0}
-  consumables: []
+  consumables:
+  - consumableType: 3
+    value: 10
