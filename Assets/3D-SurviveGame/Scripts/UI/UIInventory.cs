@@ -49,12 +49,7 @@ public class UIInventory : MonoBehaviour
             slots[i].index = i;
             slots[i].inventory = this;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        UpdateUI();
     }
 
     void ClearSelctedWindow()
@@ -203,7 +198,7 @@ public class UIInventory : MonoBehaviour
                     case ConsumableType.Hunger:
                         break;
                     case ConsumableType.Poison:
-                        StartCoroutine(condition.TakeContinuousDamage(selectedItem.consumables[i].value, 5f, 1f));
+                        condition.StartCor(selectedItem.consumables[i].value);
                         break;
                 }
             }

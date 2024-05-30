@@ -15,6 +15,8 @@ public class ItemSlot : MonoBehaviour
 
     public UIInventory inventory;
 
+    public GameObject optionUI;
+
     public int index;
     public bool equipped;
     public int quantity;
@@ -50,6 +52,7 @@ public class ItemSlot : MonoBehaviour
 
     public void OnClickBtn()
     {
+        optionUI.SetActive(true);
         inventory.SelectItem(index);
     }
 }

@@ -11,7 +11,9 @@ public interface IDamagebe
 public class PlayerCondition : MonoBehaviour , IDamagebe
 {
     public UICondition uiCondition;
-    
+    public float duration;
+
+    private Coroutine delay;
     Condition health { get {  return uiCondition.health; } }
 
     public event Action onTakeDamage;
@@ -36,9 +38,10 @@ public class PlayerCondition : MonoBehaviour , IDamagebe
         health.Subtract(damage);
         onTakeDamage?.Invoke();
     }
-    public IEnumerator TakeContinuousDamage(float damage, float duration, float interval)
+    public IEnumerator TakeContinuousDamage(float damage, float interval)
     {
         float elapsedTime = 0f;
+        duration = 5;
 
         while (elapsedTime < duration)
         {
@@ -47,6 +50,18 @@ public class PlayerCondition : MonoBehaviour , IDamagebe
             onTakeDamage?.Invoke();
             elapsedTime += interval;
             yield return new WaitForSeconds(interval);
+        }
+    }
+
+    public void StartCor(float damage)
+    {
+        if (delay != null)
+        {
+            duration += 5;
+        }
+        else
+        {
+            delay = StartCoroutine(TakeContinuousDamage(damage, 1f));
         }
     }
 }

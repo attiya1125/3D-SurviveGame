@@ -11,7 +11,6 @@ public class LookGameObject : MonoBehaviour
 
         if (CharacterManager.Instance.Player.equipment.curEquip != null && gameObject.CompareTag("ClearTxt"))
         {
-            Debug.Log("??");
             Destroy(this.gameObject);
         }
     }
