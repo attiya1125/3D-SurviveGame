@@ -3,7 +3,7 @@
 ## 👨‍🏫프로젝트 소개
 <h4>내일배움캠프 Unity 4기 Chapter 3-2 Unity 게임개발 숙련 개인과제 
 <h4>원활한 플레이를 위해 게임을 Bulid 해두었습니다!!
-[링크가기](https://drive.google.com/drive/folders/1-5yub5Nkb68IaZru4bTXiltnRIsPpXTA?usp=sharing)
+<h4>[링크가기](https://drive.google.com/drive/folders/1-5yub5Nkb68IaZru4bTXiltnRIsPpXTA?usp=sharing)
 
 ---
 ## 👨‍👨‍👦제작자
